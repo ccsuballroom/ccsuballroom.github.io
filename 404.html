@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Redirects GitHub Pages 404s to ccsuclubs.github.io while preserving path and query/hash
+    var targetDomain = "https://ccsuclubs.github.io";
+    var pathSegmentsToKeep = 0; // Adjust if your site is hosted in a subdirectory (e.g., /repo-name/ would be 1)
+
+    var l = window.location;
+    var pathSegments = l.pathname.split('/').slice(1);
+    
+    // Build the redirect URL
+    var redirectUrl = targetDomain + '/' + pathSegments.slice(pathSegmentsToKeep).join('/') + l.search + l.hash;
+    
+    // Perform the redirect
+    window.location.replace(redirectUrl);
+  </script>
+</head>
+<body>
+  <p>Redirecting to <a href="https://ccsuclubs.github.io">ccsuclubs.github.io</a>...</p>
+</body>
+</html>
